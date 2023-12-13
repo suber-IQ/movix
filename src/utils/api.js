@@ -1,14 +1,13 @@
 import axios from "axios";
 
-const BASE_URL = "http://api.themoviedb.org/3";
+const BASE_URL = "https://api.themoviedb.org/3";
 
-// const TMDB_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const TMDB_KEY = import.meta.env.VITE_TMDB_API_KEY;
 // const TMDB_KEY = import.meta.env.VITE_APP_TMDB_API_KEY;
-// const TMDB_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZWUzYjg4MzU2OGYxOWQ1YzFlODYxZDU3ZjAwNDNiMiIsInN1YiI6IjYxZGZmYTVlOTBiODdlMDA2ZDA5NDhlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9977sdQCF016EoSrjJAnHqASttkaO1fklE1krTvRRFU';
 
 
 const headers = {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZWUzYjg4MzU2OGYxOWQ1YzFlODYxZDU3ZjAwNDNiMiIsInN1YiI6IjYxZGZmYTVlOTBiODdlMDA2ZDA5NDhlMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9977sdQCF016EoSrjJAnHqASttkaO1fklE1krTvRRFU`,
+      Authorization: `Bearer ${TMDB_KEY}`,
 }
 
 export const fetchDataFromApi = async (url,params) => {

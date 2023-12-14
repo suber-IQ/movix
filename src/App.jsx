@@ -14,9 +14,8 @@ import PageNotFound from './pages/404/PageNotFound'
 
 
 function App() {
-  const {url} = useSelector((state) => state.home);
+  // const {url} = useSelector((state) => state.home);
   const dispatch = useDispatch()
-  console.log(url.backdrop);
 
   const fetchApiConfig = useCallback(() => {
     fetchDataFromApi("/configuration").then((res) => {
@@ -38,7 +37,6 @@ function App() {
     });
 
     const data = await Promise.all(promises);
-    console.log(data);
     data.map(({genres}) => {
           return genres.map((item) => (allGenres[item.id] = item))
     });
